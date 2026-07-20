@@ -66,9 +66,31 @@ $isTransfert = $type === 'transfert';
                         </div>
                     </div>
 
-                    <button type="button" id="btn-add-destination">
+                    <button type="button" class="txf-btn-add" id="btn-add-destination">
                         + Ajouter un numéro
                     </button>
+
+                    <label class="txf-checkbox" for="txf-frais-retrait" data-txf-frais-retrait-wrap>
+                        <input
+                            type="checkbox"
+                            id="txf-frais-retrait"
+                            name="ajouter_frais_retrait"
+                            value="1"
+                            data-txf-frais-retrait
+                        >
+                        <span class="txf-checkbox__box" aria-hidden="true"></span>
+                        <span class="txf-checkbox__text">
+                            Ajouter les frais de retrait
+                            <small>Le destinataire recevra le montant + le frais qu'il aurait payé pour le retirer. Disponible uniquement si tous les numéros saisis sont des numéros locaux (MVola).</small>
+                        </span>
+                    </label>
+                    <p class="txf-hint" data-txf-frais-retrait-hint hidden>
+                        Cette option n'est pas disponible pour les numéros d'un autre opérateur.
+                    </p>
+
+                    <script>
+                        window.txfPrefixes = <?= json_encode($prefixes ?? []) ?>;
+                    </script>
                 <?php endif; ?>
 
                 <button type="submit" class="txf-btn txf-btn--valider" data-txf-submit>
