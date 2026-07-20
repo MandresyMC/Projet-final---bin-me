@@ -47,22 +47,28 @@ $isTransfert = $type === 'transfert';
                 <p class="txf-solde">Solde actuel&nbsp;: <span data-txf-solde><?= number_format((float) $solde, 0, ',', ' ') ?> Ar</span></p>
 
                 <?php if ($isTransfert) : ?>
-                    <label class="txf-label" for="txf-destination">Entrez le numero du destinataire&nbsp;:</label>
-                    <div class="txf-phone">
-                        <span class="txf-phone__prefix">+261</span>
-                        <input
-                            class="txf-phone__input"
-                            type="tel"
-                            inputmode="numeric"
-                            id="txf-destination"
-                            name="numero_user_destination"
-                            placeholder="38 63 456 98"
-                            maxlength="12"
-                            value="<?= esc(old('numero_user_destination')) ?>"
-                            required
-                            data-txf-destination
-                        >
+                    <div id="destinations-container">
+                        <div class="txf-destination-item">
+                            <div class="txf-phone">
+                                <span class="txf-phone__prefix">+261</span>
+                                <input
+                                    class="txf-phone__input"
+                                    type="tel"
+                                    inputmode="numeric"
+                                    id="txf-destination"
+                                    name="numero_user_destination[]"
+                                    placeholder="38 63 456 98"
+                                    maxlength="12"
+                                    required
+                                    data-txf-destination
+                                >
+                            </div>
+                        </div>
                     </div>
+
+                    <button type="button" id="btn-add-destination">
+                        + Ajouter un numéro
+                    </button>
                 <?php endif; ?>
 
                 <button type="submit" class="txf-btn txf-btn--valider" data-txf-submit>
