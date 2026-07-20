@@ -1,0 +1,6 @@
+/writable/debugbar/*.json
+/writable/logs/*.log
+/writable/session/ci_session*
+/writable/cache/*
+!/writable/cache/index.html
+.DS_Store
