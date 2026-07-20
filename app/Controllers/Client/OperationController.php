@@ -96,6 +96,7 @@ class OperationController extends BaseController
         $montant = (float) $this->request->getPost('montant');
         $numerosDestination = $this->request->getPost('numero_user_destination') ?? [];
         $nbDestinations = count($numerosDestination);
+        $montantParDestinataire = $montant / $nbDestinations;
         $numerosDestination = array_map(function ($numero) {
             return str_replace(' ', '', trim($numero));
         }, $numerosDestination);
@@ -136,7 +137,7 @@ class OperationController extends BaseController
             $idUserDestination = $userId;
         } elseif ($typeOperation === 'retrait') {
             $idUserSource = $userId;
-            $frais = $this->calculerFrais($type['id'], $montant);
+            $frais = $this->calculerFrais($type['id'], $montantParDestinataire);
         } else {
             // Le destinataire peut appartenir a n'importe quel operateur configure
             // (Yas, ou un autre operateur), avec ou sans compte MVola.
@@ -158,7 +159,7 @@ class OperationController extends BaseController
                 $destinataire = $this->userModel->where('numero_telephone', $numeroDestination)->first();
 
                 $idUserSource = $userId;
-                $frais = $this->calculerFrais($type['id'], $montant);
+                $frais = $this->calculerFrais($type['id'], $montantParDestinataire);
 
                 if ($destinataire) {
                     // Compte MVola existant (necessairement un numero de l'operateur proprietaire)
@@ -169,7 +170,7 @@ class OperationController extends BaseController
 
                     if (strtolower($prefixeInfo['proprietaire_nom']) !== 'local') {
                         $pourcentageCommission = $this->commissionModel->getPourcentagePourOperateur($idOperateurDestination);
-                        $frais += round($montant * $pourcentageCommission / 100, 2);
+                        $frais += round($montantParDestinataire * $pourcentageCommission / 100, 2);
                     }
                 }
             }
@@ -186,13 +187,12 @@ class OperationController extends BaseController
 
         if ($idUserSource !== null) {
             $this->userModel->update($idUserSource, [
-                'solde' => $user['solde'] - $montant - $frais,
+                'solde' => $user['solde'] - $montant - ($frais * $nbDestinations),
             ]);
         }
 
         foreach ($idUserDestination as $id) {
             $destinataireActuel = $this->userModel->find($id);
-            $montantParDestinataire = $montant / $nbDestinations;
             $this->userModel->update($id, [
                 'solde' => $destinataireActuel['solde'] + $montantParDestinataire,
             ]);
@@ -204,7 +204,7 @@ class OperationController extends BaseController
                 'id_user_destination'    => $idUserDestination,
                 'id_operateur'           => $idOperateurDestination,
                 'montant'                => $montantParDestinataire,
-                'frais'                  => $frais/$nbDestinations,
+                'frais'                  => $frais,
                 'pourcentage_commission' => $pourcentageCommission,
                 'date_creation'          => date('Y-m-d H:i:s'),
             ]);
