@@ -1,0 +1,96 @@
+ERROR - 2026-05-05 07:29:04 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'meilleur_formulaire' in /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'meilleur_formul...', 3306, '', 0)
+#1 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/app/Controllers/LivresController.php(18): CodeIgniter\BaseModel->findAll()
+#7 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/CodeIgniter.php(951): App\Controllers\LivresController->accueil()
+#8 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LivresController))
+#9 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'meilleur_formulaire' in /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/app/Controllers/LivresController.php(18): CodeIgniter\BaseModel->findAll()
+#6 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/CodeIgniter.php(951): App\Controllers\LivresController->accueil()
+#7 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LivresController))
+#8 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2026-05-05 07:29:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'meilleur_formulaire'
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `livres`', [], false)
+ 3 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH/Controllers/LivresController.php(18): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\LivresController->accueil()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LivresController))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2026-05-05 07:29:05 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'meilleur_formulaire' in /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'meilleur_formul...', 3306, '', 0)
+#1 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/app/Controllers/LivresController.php(18): CodeIgniter\BaseModel->findAll()
+#7 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/CodeIgniter.php(951): App\Controllers\LivresController->accueil()
+#8 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LivresController))
+#9 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'meilleur_formulaire' in /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/app/Controllers/LivresController.php(18): CodeIgniter\BaseModel->findAll()
+#6 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/CodeIgniter.php(951): App\Controllers\LivresController->accueil()
+#7 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LivresController))
+#8 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 /Users/mandresymc/Web/S4/CodeIgniter/Meilleur formulaire/Test/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2026-05-05 07:29:05 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'meilleur_formulaire'
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `livres`', [], false)
+ 3 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH/Controllers/LivresController.php(18): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\LivresController->accueil()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LivresController))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

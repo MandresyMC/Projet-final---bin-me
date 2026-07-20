@@ -1,0 +1,1117 @@
+ERROR - 2026-05-19 07:08:27 --> table ressources has no column named descriptioin
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 163.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(163): SQLite3->exec('INSERT INTO `ressources` (`capacite`, `descriptioin`, `nom`, `type`)
+VALUES (\'30\',\'Salle Zen · 2e étage\',\'Yoga detente\',\'COURS\'), (\'25\',\'Bloc Muscu · 1er étage\',\'Salle musculation\',\'SALLE\')')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('INSERT INTO `ressources` (`capacite`, `descriptioin`, `nom`, `type`)
+VALUES (\'30\',\'Salle Zen · 2e étage\',\'Yoga detente\',\'COURS\'), (\'25\',\'Bloc Muscu · 1er étage\',\'Salle musculation\',\'SALLE\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ressources` (`capacite`, `descriptioin`, `nom`, `type`)
+VALUES (\'30\',\'Salle Zen · 2e étage\',\'Yoga detente\',\'COURS\'), (\'25\',\'Bloc Muscu · 1er étage\',\'Salle musculation\',\'SALLE\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1841): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ressources` (`capacite`, `descriptioin`, `nom`, `type`)
+VALUES (\'30\',\'Salle Zen · 2e étage\',\'Yoga detente\',\'COURS\'), (\'25\',\'Bloc Muscu · 1er étage\',\'Salle musculation\',\'SALLE\')', null, false)
+ 5 SYSTEMPATH/Database/BaseBuilder.php(2230): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH/Database/Seeds/RessourcesSeeder.php(37): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 SYSTEMPATH/Database/Seeder.php(155): App\Database\Seeds\RessourcesSeeder->run()
+ 8 SYSTEMPATH/Commands/Database/Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\RessourcesSeeder')
+ 9 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run([])
+10 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+11 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+12 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+13 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2026-05-19 07:08:52 --> ErrorException: Undefined array key "typeRessource"
+[Method: GET, Route: page-creneaux]
+in APPPATH/Views/client/creneaux.php on line 55.
+ 1 APPPATH/Views/client/creneaux.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "typeRessource"', '/Users/mandresymc/Web/S4/SQLITE/TP - Sport/app/Views/client/creneaux.php', 55)
+ 2 SYSTEMPATH/View/View.php(240): include('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/app/Views/client/creneaux.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render('client/creneaux', [], true)
+ 5 APPPATH/Controllers/CreneauController.php(18): view('client/creneaux', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\CreneauController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreneauController))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 07:08:53 --> ErrorException: Undefined array key "typeRessource"
+[Method: GET, Route: page-creneaux]
+in APPPATH/Views/client/creneaux.php on line 55.
+ 1 APPPATH/Views/client/creneaux.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "typeRessource"', '/Users/mandresymc/Web/S4/SQLITE/TP - Sport/app/Views/client/creneaux.php', 55)
+ 2 SYSTEMPATH/View/View.php(240): include('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/app/Views/client/creneaux.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render('client/creneaux', [], true)
+ 5 APPPATH/Controllers/CreneauController.php(18): view('client/creneaux', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\CreneauController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreneauController))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 07:09:31 --> ErrorException: Undefined array key "typeRessource"
+[Method: GET, Route: page-creneaux]
+in APPPATH/Views/client/creneaux.php on line 55.
+ 1 APPPATH/Views/client/creneaux.php(55): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "typeRessource"', '/Users/mandresymc/Web/S4/SQLITE/TP - Sport/app/Views/client/creneaux.php', 55)
+ 2 SYSTEMPATH/View/View.php(240): include('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/app/Views/client/creneaux.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render('client/creneaux', [], true)
+ 5 APPPATH/Controllers/CreneauController.php(18): view('client/creneaux', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\CreneauController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreneauController))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 07:52:17 --> ParseError: syntax error, unexpected token "return"
+[Method: GET, Route: page-creneaux]
+in APPPATH/Controllers/CreneauController.php on line 44.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/app/Controllers/CreneauController.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\CreneauController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\CreneauController')
+ 4 SYSTEMPATH/Router/Router.php(792): class_exists('\\App\\Controllers\\CreneauController')
+ 5 SYSTEMPATH/Router/Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 6 SYSTEMPATH/CodeIgniter.php(829): CodeIgniter\Router\Router->handle('page-creneaux')
+ 7 SYSTEMPATH/CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 07:52:18 --> ParseError: syntax error, unexpected token "return"
+[Method: GET, Route: page-creneaux]
+in APPPATH/Controllers/CreneauController.php on line 44.
+ 1 SYSTEMPATH/Autoloader/Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/app/Controllers/CreneauController.php')
+ 2 SYSTEMPATH/Autoloader/Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\CreneauController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\CreneauController')
+ 4 SYSTEMPATH/Router/Router.php(792): class_exists('\\App\\Controllers\\CreneauController')
+ 5 SYSTEMPATH/Router/Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 6 SYSTEMPATH/CodeIgniter.php(829): CodeIgniter\Router\Router->handle('page-creneaux')
+ 7 SYSTEMPATH/CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 08:02:52 --> ErrorException: Array to string conversion
+[Method: GET, Route: dashboard]
+in APPPATH/Views/client/dashboard.php on line 121.
+ 1 APPPATH/Views/client/dashboard.php(121): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', '/Users/mandresymc/Web/S4/SQLITE/TP - Sport/app/Views/client/dashboard.php', 121)
+ 2 SYSTEMPATH/View/View.php(240): include('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/app/Views/client/dashboard.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render('client/dashboard', [], true)
+ 5 APPPATH/Controllers/DashboardController.php(52): view('client/dashboard', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\DashboardController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 08:08:57 --> ErrorException: Undefined array key "capacite"
+[Method: GET, Route: page-creneaux]
+in APPPATH/Views/client/creneaux.php on line 57.
+ 1 APPPATH/Views/client/creneaux.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "capacite"', '/Users/mandresymc/Web/S4/SQLITE/TP - Sport/app/Views/client/creneaux.php', 57)
+ 2 SYSTEMPATH/View/View.php(240): include('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/app/Views/client/creneaux.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render('client/creneaux', [], true)
+ 5 APPPATH/Controllers/CreneauController.php(19): view('client/creneaux', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\CreneauController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreneauController))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 08:08:58 --> ErrorException: Undefined array key "capacite"
+[Method: GET, Route: page-creneaux]
+in APPPATH/Views/client/creneaux.php on line 57.
+ 1 APPPATH/Views/client/creneaux.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "capacite"', '/Users/mandresymc/Web/S4/SQLITE/TP - Sport/app/Views/client/creneaux.php', 57)
+ 2 SYSTEMPATH/View/View.php(240): include('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/app/Views/client/creneaux.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render('client/creneaux', [], true)
+ 5 APPPATH/Controllers/CreneauController.php(19): view('client/creneaux', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\CreneauController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreneauController))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 08:12:10 --> ErrorException: Array to string conversion
+[Method: GET, Route: dashboard]
+in APPPATH/Views/client/dashboard.php on line 127.
+ 1 APPPATH/Views/client/dashboard.php(127): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', '/Users/mandresymc/Web/S4/SQLITE/TP - Sport/app/Views/client/dashboard.php', 127)
+ 2 SYSTEMPATH/View/View.php(240): include('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/app/Views/client/dashboard.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render('client/dashboard', [], true)
+ 5 APPPATH/Controllers/DashboardController.php(52): view('client/dashboard', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\DashboardController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 09:34:00 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: dashboard]
+in APPPATH/Controllers/DashboardController.php on line 31.
+ 1 APPPATH/Controllers/DashboardController.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', '/Users/mandresymc/Web/S4/SQLITE/TP - Sport/app/Controllers/DashboardController.php', 31)
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\DashboardController->index()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 09:35:31 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: dashboard]
+in APPPATH/Controllers/DashboardController.php on line 31.
+ 1 APPPATH/Controllers/DashboardController.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', '/Users/mandresymc/Web/S4/SQLITE/TP - Sport/app/Controllers/DashboardController.php', 31)
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\DashboardController->index()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 09:35:33 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: dashboard]
+in APPPATH/Controllers/DashboardController.php on line 31.
+ 1 APPPATH/Controllers/DashboardController.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', '/Users/mandresymc/Web/S4/SQLITE/TP - Sport/app/Controllers/DashboardController.php', 31)
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\DashboardController->index()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 09:35:33 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: dashboard]
+in APPPATH/Controllers/DashboardController.php on line 31.
+ 1 APPPATH/Controllers/DashboardController.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', '/Users/mandresymc/Web/S4/SQLITE/TP - Sport/app/Controllers/DashboardController.php', 31)
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\DashboardController->index()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 09:35:45 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: dashboard]
+in APPPATH/Controllers/DashboardController.php on line 31.
+ 1 APPPATH/Controllers/DashboardController.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', '/Users/mandresymc/Web/S4/SQLITE/TP - Sport/app/Controllers/DashboardController.php', 31)
+ 2 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\DashboardController->index()
+ 3 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 4 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+ERROR - 2026-05-19 10:21:55 --> Unable to prepare statement: 1, no such table: reservations
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 164.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(164): SQLite3->query('SELECT *
+FROM `reservations`
+WHERE `user_id` = 4')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT *
+FROM `reservations`
+WHERE `user_id` = 4')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `reservations`
+WHERE `user_id` = 4')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `reservations`
+WHERE `user_id` = :user_id:', [...], false)
+ 5 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Controllers/DashboardController.php(23): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\DashboardController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+10 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 10:21:55 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to prepare statement: 1, no such table: reservations
+[Method: GET, Route: dashboard]
+in SYSTEMPATH/Database/BaseConnection.php on line 865.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `reservations`
+WHERE `user_id` = :user_id:', [...], false)
+ 2 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH/Controllers/DashboardController.php(23): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\DashboardController->index()
+ 6 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 10:21:55 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unable to prepare statement: 1, no such table: reservations
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 174.
+ 1 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT *
+FROM `reservations`
+WHERE `user_id` = 4')
+ 2 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `reservations`
+WHERE `user_id` = 4')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `reservations`
+WHERE `user_id` = :user_id:', [...], false)
+ 4 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH/Controllers/DashboardController.php(23): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\DashboardController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 10:21:55 --> [Caused by] Exception: Unable to prepare statement: 1, no such table: reservations
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 164.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(164): SQLite3->query('SELECT *
+FROM `reservations`
+WHERE `user_id` = 4')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT *
+FROM `reservations`
+WHERE `user_id` = 4')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `reservations`
+WHERE `user_id` = 4')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `reservations`
+WHERE `user_id` = :user_id:', [...], false)
+ 5 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Controllers/DashboardController.php(23): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\DashboardController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+10 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+ERROR - 2026-05-19 10:21:56 --> Unable to prepare statement: 1, no such table: reservations
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 164.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(164): SQLite3->query('SELECT *
+FROM `reservations`
+WHERE `user_id` = 4')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT *
+FROM `reservations`
+WHERE `user_id` = 4')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `reservations`
+WHERE `user_id` = 4')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `reservations`
+WHERE `user_id` = :user_id:', [...], false)
+ 5 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Controllers/DashboardController.php(23): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\DashboardController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+10 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 10:21:56 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to prepare statement: 1, no such table: reservations
+[Method: GET, Route: dashboard]
+in SYSTEMPATH/Database/BaseConnection.php on line 865.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `reservations`
+WHERE `user_id` = :user_id:', [...], false)
+ 2 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH/Controllers/DashboardController.php(23): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\DashboardController->index()
+ 6 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 10:21:56 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unable to prepare statement: 1, no such table: reservations
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 174.
+ 1 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT *
+FROM `reservations`
+WHERE `user_id` = 4')
+ 2 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `reservations`
+WHERE `user_id` = 4')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `reservations`
+WHERE `user_id` = :user_id:', [...], false)
+ 4 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH/Controllers/DashboardController.php(23): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\DashboardController->index()
+ 8 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 10:21:56 --> [Caused by] Exception: Unable to prepare statement: 1, no such table: reservations
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 164.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(164): SQLite3->query('SELECT *
+FROM `reservations`
+WHERE `user_id` = 4')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT *
+FROM `reservations`
+WHERE `user_id` = 4')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `reservations`
+WHERE `user_id` = 4')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `reservations`
+WHERE `user_id` = :user_id:', [...], false)
+ 5 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Controllers/DashboardController.php(23): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\DashboardController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+10 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+ERROR - 2026-05-19 11:08:24 --> Unable to prepare statement: 1, no such column: creneaux.nom
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 164.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(164): SQLite3->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`', [], false)
+ 5 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Models/ReservationModel.php(35): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH/Controllers/AdminDashboardController.php(15): App\Models\ReservationModel->recupererAvecDetails()
+ 9 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminDashboardController->index()
+10 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminDashboardController))
+11 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 11:08:24 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to prepare statement: 1, no such column: creneaux.nom
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH/Database/BaseConnection.php on line 865.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`', [], false)
+ 2 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH/Models/ReservationModel.php(35): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH/Controllers/AdminDashboardController.php(15): App\Models\ReservationModel->recupererAvecDetails()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminDashboardController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminDashboardController))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 11:08:24 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unable to prepare statement: 1, no such column: creneaux.nom
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 174.
+ 1 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`', [], false)
+ 4 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH/Models/ReservationModel.php(35): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH/Controllers/AdminDashboardController.php(15): App\Models\ReservationModel->recupererAvecDetails()
+ 8 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminDashboardController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminDashboardController))
+10 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 11:08:24 --> [Caused by] Exception: Unable to prepare statement: 1, no such column: creneaux.nom
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 164.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(164): SQLite3->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`', [], false)
+ 5 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Models/ReservationModel.php(35): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH/Controllers/AdminDashboardController.php(15): App\Models\ReservationModel->recupererAvecDetails()
+ 9 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminDashboardController->index()
+10 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminDashboardController))
+11 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+ERROR - 2026-05-19 11:08:27 --> Unable to prepare statement: 1, no such column: creneaux.nom
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 164.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(164): SQLite3->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`', [], false)
+ 5 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Models/ReservationModel.php(35): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH/Controllers/AdminReservationController.php(15): App\Models\ReservationModel->recupererAvecDetails()
+ 9 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminReservationController->index()
+10 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminReservationController))
+11 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 11:08:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to prepare statement: 1, no such column: creneaux.nom
+[Method: GET, Route: admin/reservations]
+in SYSTEMPATH/Database/BaseConnection.php on line 865.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`', [], false)
+ 2 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH/Models/ReservationModel.php(35): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH/Controllers/AdminReservationController.php(15): App\Models\ReservationModel->recupererAvecDetails()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminReservationController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminReservationController))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 11:08:27 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unable to prepare statement: 1, no such column: creneaux.nom
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 174.
+ 1 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`', [], false)
+ 4 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH/Models/ReservationModel.php(35): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH/Controllers/AdminReservationController.php(15): App\Models\ReservationModel->recupererAvecDetails()
+ 8 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminReservationController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminReservationController))
+10 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 11:08:27 --> [Caused by] Exception: Unable to prepare statement: 1, no such column: creneaux.nom
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 164.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(164): SQLite3->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`', [], false)
+ 5 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Models/ReservationModel.php(35): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH/Controllers/AdminReservationController.php(15): App\Models\ReservationModel->recupererAvecDetails()
+ 9 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminReservationController->index()
+10 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminReservationController))
+11 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+ERROR - 2026-05-19 11:08:28 --> Unable to prepare statement: 1, no such column: creneaux.nom
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 164.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(164): SQLite3->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`', [], false)
+ 5 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Models/ReservationModel.php(35): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH/Controllers/AdminDashboardController.php(15): App\Models\ReservationModel->recupererAvecDetails()
+ 9 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminDashboardController->index()
+10 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminDashboardController))
+11 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 11:08:28 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to prepare statement: 1, no such column: creneaux.nom
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH/Database/BaseConnection.php on line 865.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`', [], false)
+ 2 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH/Models/ReservationModel.php(35): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH/Controllers/AdminDashboardController.php(15): App\Models\ReservationModel->recupererAvecDetails()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminDashboardController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminDashboardController))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 11:08:28 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unable to prepare statement: 1, no such column: creneaux.nom
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 174.
+ 1 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`', [], false)
+ 4 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH/Models/ReservationModel.php(35): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH/Controllers/AdminDashboardController.php(15): App\Models\ReservationModel->recupererAvecDetails()
+ 8 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminDashboardController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminDashboardController))
+10 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 11:08:28 --> [Caused by] Exception: Unable to prepare statement: 1, no such column: creneaux.nom
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 164.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(164): SQLite3->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`', [], false)
+ 5 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Models/ReservationModel.php(35): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH/Controllers/AdminDashboardController.php(15): App\Models\ReservationModel->recupererAvecDetails()
+ 9 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminDashboardController->index()
+10 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminDashboardController))
+11 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+ERROR - 2026-05-19 11:10:27 --> Unable to prepare statement: 1, no such column: creneaux.nom
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 164.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(164): SQLite3->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`', [], false)
+ 5 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Models/ReservationModel.php(35): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH/Controllers/AdminDashboardController.php(15): App\Models\ReservationModel->recupererAvecDetails()
+ 9 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminDashboardController->index()
+10 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminDashboardController))
+11 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 11:10:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to prepare statement: 1, no such column: creneaux.nom
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH/Database/BaseConnection.php on line 865.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`', [], false)
+ 2 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH/Models/ReservationModel.php(35): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH/Controllers/AdminDashboardController.php(15): App\Models\ReservationModel->recupererAvecDetails()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminDashboardController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminDashboardController))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 11:10:27 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unable to prepare statement: 1, no such column: creneaux.nom
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 174.
+ 1 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`', [], false)
+ 4 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH/Models/ReservationModel.php(35): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH/Controllers/AdminDashboardController.php(15): App\Models\ReservationModel->recupererAvecDetails()
+ 8 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminDashboardController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminDashboardController))
+10 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 11:10:27 --> [Caused by] Exception: Unable to prepare statement: 1, no such column: creneaux.nom
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 164.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(164): SQLite3->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`', [], false)
+ 5 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Models/ReservationModel.php(35): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH/Controllers/AdminDashboardController.php(15): App\Models\ReservationModel->recupererAvecDetails()
+ 9 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminDashboardController->index()
+10 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminDashboardController))
+11 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+ERROR - 2026-05-19 11:10:28 --> Unable to prepare statement: 1, no such column: creneaux.nom
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 164.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(164): SQLite3->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`', [], false)
+ 5 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Models/ReservationModel.php(35): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH/Controllers/AdminDashboardController.php(15): App\Models\ReservationModel->recupererAvecDetails()
+ 9 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminDashboardController->index()
+10 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminDashboardController))
+11 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 11:10:28 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to prepare statement: 1, no such column: creneaux.nom
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH/Database/BaseConnection.php on line 865.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`', [], false)
+ 2 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH/Models/ReservationModel.php(35): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH/Controllers/AdminDashboardController.php(15): App\Models\ReservationModel->recupererAvecDetails()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminDashboardController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminDashboardController))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 11:10:28 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unable to prepare statement: 1, no such column: creneaux.nom
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 174.
+ 1 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`', [], false)
+ 4 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH/Models/ReservationModel.php(35): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH/Controllers/AdminDashboardController.php(15): App\Models\ReservationModel->recupererAvecDetails()
+ 8 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminDashboardController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminDashboardController))
+10 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 11:10:28 --> [Caused by] Exception: Unable to prepare statement: 1, no such column: creneaux.nom
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 164.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(164): SQLite3->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`', [], false)
+ 5 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Models/ReservationModel.php(35): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH/Controllers/AdminDashboardController.php(15): App\Models\ReservationModel->recupererAvecDetails()
+ 9 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminDashboardController->index()
+10 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminDashboardController))
+11 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+ERROR - 2026-05-19 11:10:28 --> Unable to prepare statement: 1, no such column: creneaux.nom
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 164.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(164): SQLite3->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`', [], false)
+ 5 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Models/ReservationModel.php(35): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH/Controllers/AdminDashboardController.php(15): App\Models\ReservationModel->recupererAvecDetails()
+ 9 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminDashboardController->index()
+10 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminDashboardController))
+11 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 11:10:28 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to prepare statement: 1, no such column: creneaux.nom
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH/Database/BaseConnection.php on line 865.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`', [], false)
+ 2 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH/Models/ReservationModel.php(35): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH/Controllers/AdminDashboardController.php(15): App\Models\ReservationModel->recupererAvecDetails()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminDashboardController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminDashboardController))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 11:10:28 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unable to prepare statement: 1, no such column: creneaux.nom
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 174.
+ 1 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`', [], false)
+ 4 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH/Models/ReservationModel.php(35): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH/Controllers/AdminDashboardController.php(15): App\Models\ReservationModel->recupererAvecDetails()
+ 8 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminDashboardController->index()
+ 9 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminDashboardController))
+10 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 11:10:28 --> [Caused by] Exception: Unable to prepare statement: 1, no such column: creneaux.nom
+in SYSTEMPATH/Database/SQLite3/Connection.php on line 164.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(164): SQLite3->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 2 SYSTEMPATH/Database/BaseConnection.php(910): CodeIgniter\Database\SQLite3\Connection->execute('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `reservations`.*, `creneaux`.`nom` as `creneau_nom`, `users`.`nom` as `user_nom`, `users`.`email` as `user_email`, `creneaux`.`date_debut`, `creneaux`.`date_fin`, `ressources`.`nom` as `ressource_nom`
+FROM `reservations`
+JOIN `users` ON `users`.`id` = `reservations`.`user_id`
+JOIN `creneaux` ON `creneaux`.`id` = `reservations`.`creneau_id`
+JOIN `ressources` ON `ressources`.`id` = `creneaux`.`ressource_id`', [], false)
+ 5 SYSTEMPATH/Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Models/ReservationModel.php(35): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH/Controllers/AdminDashboardController.php(15): App\Models\ReservationModel->recupererAvecDetails()
+ 9 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminDashboardController->index()
+10 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminDashboardController))
+11 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 11:11:17 --> ErrorException: Undefined array key "ressource"
+[Method: GET, Route: admin/dashboard]
+in APPPATH/Views/admin/dashboard.php on line 97.
+ 1 APPPATH/Views/admin/dashboard.php(97): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ressource"', '/Users/mandresymc/Web/S4/SQLITE/TP - Sport/app/Views/admin/dashboard.php', 97)
+ 2 SYSTEMPATH/View/View.php(240): include('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/app/Views/admin/dashboard.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render('admin/dashboard', [], true)
+ 5 APPPATH/Controllers/AdminDashboardController.php(27): view('admin/dashboard', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminDashboardController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminDashboardController))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 11:11:18 --> ErrorException: Undefined array key "ressource"
+[Method: GET, Route: admin/dashboard]
+in APPPATH/Views/admin/dashboard.php on line 97.
+ 1 APPPATH/Views/admin/dashboard.php(97): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ressource"', '/Users/mandresymc/Web/S4/SQLITE/TP - Sport/app/Views/admin/dashboard.php', 97)
+ 2 SYSTEMPATH/View/View.php(240): include('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/app/Views/admin/dashboard.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render('admin/dashboard', [], true)
+ 5 APPPATH/Controllers/AdminDashboardController.php(27): view('admin/dashboard', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminDashboardController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminDashboardController))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 11:11:18 --> ErrorException: Undefined array key "ressource"
+[Method: GET, Route: admin/dashboard]
+in APPPATH/Views/admin/dashboard.php on line 97.
+ 1 APPPATH/Views/admin/dashboard.php(97): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ressource"', '/Users/mandresymc/Web/S4/SQLITE/TP - Sport/app/Views/admin/dashboard.php', 97)
+ 2 SYSTEMPATH/View/View.php(240): include('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/app/Views/admin/dashboard.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render('admin/dashboard', [], true)
+ 5 APPPATH/Controllers/AdminDashboardController.php(27): view('admin/dashboard', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminDashboardController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminDashboardController))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
+CRITICAL - 2026-05-19 11:11:18 --> ErrorException: Undefined array key "ressource"
+[Method: GET, Route: admin/dashboard]
+in APPPATH/Views/admin/dashboard.php on line 97.
+ 1 APPPATH/Views/admin/dashboard.php(97): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ressource"', '/Users/mandresymc/Web/S4/SQLITE/TP - Sport/app/Views/admin/dashboard.php', 97)
+ 2 SYSTEMPATH/View/View.php(240): include('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/app/Views/admin/dashboard.php')
+ 3 SYSTEMPATH/View/View.php(243): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1250): CodeIgniter\View\View->render('admin/dashboard', [], true)
+ 5 APPPATH/Controllers/AdminDashboardController.php(27): view('admin/dashboard', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AdminDashboardController->index()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AdminDashboardController))
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/rewrite.php(44): require_once('/Users/mandresymc/Web/S4/SQLITE/TP - Sport/public/index.php')
