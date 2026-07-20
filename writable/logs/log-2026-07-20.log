@@ -1,0 +1,11 @@
+CRITICAL - 2026-07-20 05:59:57 --> ErrorException: require(/Users/mandresymc/Web/S4/Projet final - binôme/app/Views/errors/cli/error_exception.php): Failed to open stream: No such file or directory
+[Method: CLI, Route: migrate]
+in SYSTEMPATH/CLI/BaseCommand.php on line 133.
+ 1 SYSTEMPATH/CLI/BaseCommand.php(133): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require(/Users/mandresymc/Web/S4/Projet final - binôme/app/Views/errors/cli/error_exception.php): Failed to open stream: No such file or directory', '/Users/mandresymc/Web/S4/Projet final - binôme/system/CLI/BaseCommand.php', 133)
+ 2 SYSTEMPATH/CLI/BaseCommand.php(133): require()
+ 3 SYSTEMPATH/Commands/Database/Migrate.php(104): CodeIgniter\CLI\BaseCommand->showError(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+ 4 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run([])
+ 5 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', [])
+ 6 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+ 7 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 8 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
