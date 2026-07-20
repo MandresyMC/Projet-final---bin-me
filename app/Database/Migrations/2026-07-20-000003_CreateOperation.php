@@ -23,9 +23,9 @@ class CreateOperationTable extends Migration
         $this->forge->addKey('id_user_source');
         $this->forge->addKey('id_user_destination');
 
-        $this->forge->addForeignKey('id_type', 'type', 'id', 'RESTRICT', 'RESTRICT', 'fk_operation_type');
-        $this->forge->addForeignKey('id_user_source', 'user', 'id', 'RESTRICT', 'RESTRICT', 'fk_operation_user');
-        $this->forge->addForeignKey('id_user_destination', 'user', 'id', 'RESTRICT', 'RESTRICT', 'fk_operation_user_destination');
+        $this->forge->addForeignKey('id_type', 'type', 'id', 'RESTRICT', 'RESTRICT');
+        $this->forge->addForeignKey('id_user_source', 'user', 'id', 'RESTRICT', 'RESTRICT');
+        $this->forge->addForeignKey('id_user_destination', 'user', 'id', 'RESTRICT', 'RESTRICT');
 
         $this->forge->createTable('operation');
     }
