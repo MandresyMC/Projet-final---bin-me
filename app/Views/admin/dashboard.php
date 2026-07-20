@@ -38,6 +38,29 @@ foreach ($repartition as $r) {
     $gradientStops[] = $couleur . ' ' . $start . '% ' . $cursor . '%';
 }
 $conicGradient = $gradientStops ? 'conic-gradient(' . implode(', ', $gradientStops) . ')' : '#e6e6e0';
+
+$operateurCouleurs = ['#ff5c3f', '#317041', '#fed200', '#4b7c39', '#a72525', '#3f3f44'];
+
+$maxCommission = 1;
+foreach ($commissionParOperateur as $c) {
+    $maxCommission = max($maxCommission, (float) $c['montant_commission']);
+}
+
+$totalVolumeOperateurs = 0;
+foreach ($repartitionParOperateur as $r) {
+    $totalVolumeOperateurs += (float) $r['volume'];
+}
+
+$gradientStopsOperateurs = [];
+$cursorOp = 0;
+foreach ($repartitionParOperateur as $i => $r) {
+    $part = $totalVolumeOperateurs > 0 ? round(((float) $r['volume'] / $totalVolumeOperateurs) * 100) : 0;
+    $start = $cursorOp;
+    $cursorOp += $part;
+    $couleur = $operateurCouleurs[$i % count($operateurCouleurs)];
+    $gradientStopsOperateurs[] = $couleur . ' ' . $start . '% ' . $cursorOp . '%';
+}
+$conicGradientOperateurs = $gradientStopsOperateurs ? 'conic-gradient(' . implode(', ', $gradientStopsOperateurs) . ')' : '#e6e6e0';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -105,6 +128,56 @@ $conicGradient = $gradientStops ? 'conic-gradient(' . implode(', ', $gradientSto
                                     <li>
                                         <span class="donut-legend__swatch" style="background-color: <?= esc($couleurs[$r['type_nom']] ?? '#3f3f44') ?>;"></span>
                                         <?= esc(ucfirst($r['type_nom'])) ?> — <strong><?= esc($part) ?>%</strong>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </section>
+
+        <section class="admin-section">
+            <h1 class="admin-section__title">AUTRES OPERATEURS</h1>
+            <p class="admin-section__desc">
+                Montant de commission perçu sur les transferts vers les opérateurs non propriétaires,
+                et répartition du volume transigé vers chacun d'eux.
+            </p>
+
+            <div class="chart-grid">
+                <div class="chart-card">
+                    <h2 class="chart-card__title">Montant pris par les autres opérateurs (commission)</h2>
+                    <?php if (empty($commissionParOperateur)) : ?>
+                        <p class="admin-empty">Aucune commission perçue pour le moment.</p>
+                    <?php else : ?>
+                        <div class="bar-chart">
+                            <?php foreach ($commissionParOperateur as $c) : ?>
+                                <div class="bar-chart__col">
+                                    <div class="bar-chart__bar" data-bar-target="<?= round(((float) $c['montant_commission'] / $maxCommission) * 100) ?>">
+                                        <span class="bar-chart__value"><?= number_format((float) $c['montant_commission'], 0, ',', ' ') ?> Ar</span>
+                                    </div>
+                                    <span class="bar-chart__label"><?= esc($c['operateur_nom']) ?></span>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
+
+                <div class="chart-card">
+                    <h2 class="chart-card__title">Répartition du volume par opérateur</h2>
+                    <?php if (empty($repartitionParOperateur)) : ?>
+                        <p class="admin-empty">Aucun transfert externe enregistré pour le moment.</p>
+                    <?php else : ?>
+                        <div class="donut-wrap">
+                            <div class="donut" style="background: <?= $conicGradientOperateurs ?>;"></div>
+                            <ul class="donut-legend">
+                                <?php foreach ($repartitionParOperateur as $i => $r) :
+                                    $part = $totalVolumeOperateurs > 0 ? round(((float) $r['volume'] / $totalVolumeOperateurs) * 100) : 0;
+                                ?>
+                                    <li>
+                                        <span class="donut-legend__swatch" style="background-color: <?= esc($operateurCouleurs[$i % count($operateurCouleurs)]) ?>;"></span>
+                                        <?= esc($r['operateur_nom']) ?> — <strong><?= esc($part) ?>%</strong>
+                                        (<?= number_format((float) $r['volume'], 0, ',', ' ') ?> Ar)
                                     </li>
                                 <?php endforeach; ?>
                             </ul>

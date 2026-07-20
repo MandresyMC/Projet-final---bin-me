@@ -86,6 +86,32 @@ class ClientOperationController extends BaseController
         return $row['frais'] ?? 0.00;
     }
 
+    /**
+     * Normalise le(s) numero(s) destinataire poste(s) par le formulaire.
+     * Le champ transfert est un tableau (numero_user_destination[]) pour permettre
+     * l'envoi vers plusieurs numeros en une seule soumission.
+     *
+     * @return string[]
+     */
+    private function extraireNumerosDestination(): array
+    {
+        $brut = $this->request->getPost('numero_user_destination');
+
+        if (!is_array($brut)) {
+            $brut = $brut === null ? [] : [$brut];
+        }
+
+        $numeros = [];
+        foreach ($brut as $numero) {
+            $numero = str_replace(' ', '', trim((string) $numero));
+            if ($numero !== '') {
+                $numeros[] = $numero;
+            }
+        }
+
+        return array_values(array_unique($numeros));
+    }
+
     public function createOperation()
     {
         if ($r = $this->verificationConnexion()) {
@@ -94,8 +120,6 @@ class ClientOperationController extends BaseController
 
         $typeOperation = strtolower(trim((string) $this->request->getPost('type_operation')));
         $montant = (float) $this->request->getPost('montant');
-        $numeroDestination = trim((string) $this->request->getPost('numero_user_destination'));
-        $numeroDestination = str_replace(' ', '', $numeroDestination);
 
         if (!in_array($typeOperation, ['depot', 'retrait', 'transfert'], true)) {
             return redirect()->back()
@@ -123,51 +147,24 @@ class ClientOperationController extends BaseController
             return redirect()->to('/')->with('error', 'Utilisateur introuvable, merci de vous reconnecter.');
         }
 
+        if ($typeOperation !== 'transfert') {
+            return $this->executerOperationSimple($type, $typeOperation, $montant, $userId, $user);
+        }
+
+        return $this->executerTransferts($type, $montant, $userId, $user);
+    }
+
+    private function executerOperationSimple(array $type, string $typeOperation, float $montant, int $userId, array $user)
+    {
         $idUserSource = null;
         $idUserDestination = null;
-        $idOperateurDestination = null;
         $frais = 0.00;
-        $pourcentageCommission = 0.00;
 
         if ($typeOperation === 'depot') {
             $idUserDestination = $userId;
-        } elseif ($typeOperation === 'retrait') {
-            $idUserSource = $userId;
-            $frais = $this->calculerFrais($type['id'], $montant);
         } else {
-            // Le destinataire peut appartenir a n'importe quel operateur configure
-            // (Yas, ou un autre operateur), avec ou sans compte MVola.
-            $verification = $this->verifyNumeroTelephone($numeroDestination, false);
-            if ($verification !== true) {
-                return redirect()->back()
-                    ->withInput()
-                    ->with('error', $verification);
-            }
-
-            if ($numeroDestination === $user['numero_telephone']) {
-                return redirect()->back()
-                    ->withInput()
-                    ->with('error', 'Vous ne pouvez pas vous transférer de l\'argent à vous-même.');
-            }
-
-            $prefixeInfo = $this->getPrefixeInfo($numeroDestination);
-            $destinataire = $this->userModel->where('numero_telephone', $numeroDestination)->first();
-
             $idUserSource = $userId;
             $frais = $this->calculerFrais($type['id'], $montant);
-
-            if ($destinataire) {
-                // Compte MVola existant (necessairement un numero de l'operateur proprietaire)
-                $idUserDestination = $destinataire['id'];
-            } else {
-                // Transfert externe : numero valide mais sans compte MVola (autre operateur, ou Yas sans compte)
-                $idOperateurDestination = (int) $prefixeInfo['id_operateur'];
-
-                if (strtolower($prefixeInfo['proprietaire_nom']) !== 'local') {
-                    $pourcentageCommission = $this->commissionModel->getPourcentagePourOperateur($idOperateurDestination);
-                    $frais += round($montant * $pourcentageCommission / 100, 2);
-                }
-            }
         }
 
         if ($idUserSource !== null && $user['solde'] < ($montant + $frais)) {
@@ -196,12 +193,121 @@ class ClientOperationController extends BaseController
             'id_type'                => $type['id'],
             'id_user_source'         => $idUserSource,
             'id_user_destination'    => $idUserDestination,
-            'id_operateur'           => $idOperateurDestination,
             'montant'                => $montant,
             'frais'                  => $frais,
-            'pourcentage_commission' => $pourcentageCommission,
             'date_creation'          => date('Y-m-d H:i:s'),
         ]);
+
+        $db->transComplete();
+
+        if ($db->transStatus() === false) {
+            return redirect()->back()
+                ->withInput()
+                ->with('error', "Une erreur est survenue lors de l'opération. Merci de réessayer.");
+        }
+
+        $userMisAJour = $this->userModel->find($userId);
+        session()->set('solde', $userMisAJour['solde']);
+
+        return redirect()->to('/client/accueil')->with('success', 'Opération effectuée avec succès.');
+    }
+
+    private function executerTransferts(array $type, float $montant, int $userId, array $user)
+    {
+        $numeros = $this->extraireNumerosDestination();
+
+        if (empty($numeros)) {
+            return redirect()->back()
+                ->withInput()
+                ->with('error', 'Veuillez saisir au moins un numéro de destination.');
+        }
+
+        // Le meme montant est envoye a chaque numero renseigne : on prepare
+        // et on valide chaque transfert avant de toucher au solde.
+        $transferts = [];
+        foreach ($numeros as $numeroDestination) {
+            $verification = $this->verifyNumeroTelephone($numeroDestination, false);
+            if ($verification !== true) {
+                return redirect()->back()
+                    ->withInput()
+                    ->with('error', $verification);
+            }
+
+            if ($numeroDestination === $user['numero_telephone']) {
+                return redirect()->back()
+                    ->withInput()
+                    ->with('error', 'Vous ne pouvez pas vous transférer de l\'argent à vous-même.');
+            }
+
+            $prefixeInfo = $this->getPrefixeInfo($numeroDestination);
+            $destinataire = $this->userModel->where('numero_telephone', $numeroDestination)->first();
+
+            $idUserDestination = null;
+            $idOperateurDestination = null;
+            $pourcentageCommission = 0.00;
+            $frais = $this->calculerFrais($type['id'], $montant);
+
+            if ($destinataire) {
+                // Compte MVola existant (necessairement un numero de l'operateur proprietaire)
+                $idUserDestination = $destinataire['id'];
+            } else {
+                // Transfert externe : numero valide mais sans compte MVola (autre operateur, ou Yas sans compte)
+                $idOperateurDestination = (int) $prefixeInfo['id_operateur'];
+
+                if (strtolower($prefixeInfo['proprietaire_nom']) !== 'local') {
+                    $pourcentageCommission = $this->commissionModel->getPourcentagePourOperateur($idOperateurDestination);
+                    $frais += round($montant * $pourcentageCommission / 100, 2);
+                }
+            }
+
+            $transferts[] = [
+                'numero_destination'     => $numeroDestination,
+                'id_user_destination'    => $idUserDestination,
+                'id_operateur'           => $idOperateurDestination,
+                'pourcentage_commission' => $pourcentageCommission,
+                'frais'                  => $frais,
+            ];
+        }
+
+        $fraisTotal = 0.00;
+        foreach ($transferts as $t) {
+            $fraisTotal += $t['frais'];
+        }
+        $montantTotal = $montant * count($transferts);
+
+        if ($user['solde'] < ($montantTotal + $fraisTotal)) {
+            return redirect()->back()
+                ->withInput()
+                ->with('error', 'Solde insuffisant pour effectuer ce(s) transfert(s).');
+        }
+
+        $db = $this->operationModel->db;
+        $db->transStart();
+
+        $this->userModel->update($userId, [
+            'solde' => $user['solde'] - $montantTotal - $fraisTotal,
+        ]);
+
+        foreach ($transferts as $t) {
+            if ($t['id_user_destination'] !== null) {
+                $destinataireActuel = $this->userModel->find($t['id_user_destination']);
+                $this->userModel->update($t['id_user_destination'], [
+                    'solde' => $destinataireActuel['solde'] + $montant,
+                ]);
+            }
+
+            $this->operationModel->insert([
+                'id_type'                => $type['id'],
+                'id_user_source'         => $userId,
+                'id_user_destination'    => $t['id_user_destination'],
+                'id_operateur'           => $t['id_operateur'],
+                'numero_destination'     => $t['numero_destination'],
+                'montant'                => $montant,
+                'frais'                  => $t['frais'],
+                'pourcentage_commission' => $t['pourcentage_commission'],
+                'date_creation'          => date('Y-m-d H:i:s'),
+            ]);
+        }
 
         $db->transComplete();
 
@@ -226,7 +332,7 @@ class ClientOperationController extends BaseController
         $userId = session()->get('user_id');
 
         $operations = $this->operationModel
-            ->select('operation.*, type.nom as type_nom, src.numero_telephone as source_numero, dst.numero_telephone as destination_numero')
+            ->select('operation.*, type.nom as type_nom, src.numero_telephone as source_numero, COALESCE(dst.numero_telephone, operation.numero_destination) as destination_numero')
             ->join('type', 'operation.id_type = type.id')
             ->join('user as src', 'operation.id_user_source = src.id', 'left')
             ->join('user as dst', 'operation.id_user_destination = dst.id', 'left')

@@ -15,6 +15,7 @@ class OperationModel extends Model
         'id_user_source',
         'id_user_destination',
         'id_operateur',
+        'numero_destination',
         'montant',
         'frais',
         'pourcentage_commission',

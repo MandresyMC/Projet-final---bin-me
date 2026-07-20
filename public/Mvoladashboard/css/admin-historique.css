@@ -1,0 +1,7 @@
+.admin-table--historique {
+  min-width: 1080px;
+}
+
+.admin-table--historique .admin-badge {
+  white-space: nowrap;
+}

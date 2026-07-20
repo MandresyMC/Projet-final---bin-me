@@ -15,6 +15,7 @@
             <a href="<?= base_url('admin/dashboard') ?>" class="nav-btn <?= $active === 'dashboard' ? 'nav-btn--active' : 'nav-btn--outline' ?>">Dashboard</a>
             <a href="<?= base_url('admin/configuration') ?>" class="nav-btn <?= $active === 'configuration' ? 'nav-btn--active' : 'nav-btn--outline' ?>">Configuration des regles</a>
             <a href="<?= base_url('admin/clients') ?>" class="nav-btn <?= $active === 'clients' ? 'nav-btn--active' : 'nav-btn--outline' ?>">Clients</a>
+            <a href="<?= base_url('admin/historique') ?>" class="nav-btn <?= $active === 'historique' ? 'nav-btn--active' : 'nav-btn--outline' ?>">Historique</a>
             <a href="<?= base_url('deconnexion') ?>" class="nav-btn nav-btn--solid">Deconnexion</a>
         </nav>
     </div>
