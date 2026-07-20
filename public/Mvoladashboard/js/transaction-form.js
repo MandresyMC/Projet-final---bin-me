@@ -20,3 +20,43 @@
     });
   }
 })();
+
+const container = document.getElementById('destinations-container');
+const btnAdd = document.getElementById('btn-add-destination');
+
+if (container && btnAdd) {
+
+    btnAdd.addEventListener('click', () => {
+
+        const item = document.createElement('div');
+        item.className = 'txf-destination-item';
+
+        item.innerHTML = `
+            <div class="txf-phone">
+                <span class="txf-phone__prefix">+261</span>
+                <input
+                    class="txf-phone__input"
+                    type="tel"
+                    inputmode="numeric"
+                    name="numero_user_destination[]"
+                    placeholder="38 63 456 98"
+                    maxlength="12"
+                    required
+                >
+            </div>
+
+            <button type="button" class="btn-remove-destination">
+                Supprimer
+            </button>
+        `;
+
+        container.appendChild(item);
+    });
+
+    container.addEventListener('click', (e) => {
+        if (e.target.classList.contains('btn-remove-destination')) {
+            e.target.closest('.txf-destination-item').remove();
+        }
+    });
+
+}
