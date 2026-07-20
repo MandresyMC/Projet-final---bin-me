@@ -1,8 +1,24 @@
-.admin-columns {
-  display: grid;
-  grid-template-columns: minmax(240px, 340px) 1fr;
-  gap: 48px;
-  align-items: start;
+.admin-section__block {
+  margin-top: 8px;
+}
+
+.prefix-form__input {
+  max-width: 160px;
+}
+
+.prefix-form__select {
+  min-width: 200px;
+}
+
+.prefix-form__preview-field {
+  min-width: 100px;
+  justify-content: center;
+}
+
+.prefix-form__preview {
+  height: 60px;
+  margin-left: 0;
+  padding: 0 18px;
 }
 
 .taxes-form {
@@ -69,11 +85,6 @@
   box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.9);
 }
 
-.admin-inline-form select.taxes-form__input {
-  height: 44px;
-  min-width: 140px;
-}
-
 .pill-badge {
   display: inline-flex;
   align-items: center;
@@ -119,8 +130,10 @@
   opacity: 0.85;
 }
 
-@media (max-width: 860px) {
-  .admin-columns {
-    grid-template-columns: 1fr;
+@media (max-width: 640px) {
+  .prefix-form__input,
+  .prefix-form__select {
+    max-width: none;
+    width: 100%;
   }
 }

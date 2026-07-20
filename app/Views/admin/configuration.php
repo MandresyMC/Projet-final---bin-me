@@ -45,35 +45,45 @@
                 les autres opérateurs peuvent tout de même être destinataires d'un transfert.
             </p>
 
-            <div class="admin-columns">
-                <div>
-                    <span class="admin-label">Entrez vos prefixes</span>
-                    <form class="admin-inline-form" action="<?= base_url('admin/prefixe') ?>" method="post" data-prefix-form novalidate>
-                        <input
-                            type="text"
-                            inputmode="numeric"
-                            maxlength="3"
-                            placeholder="038"
-                            name="prefixe"
-                            data-prefix-input
-                            required
-                        >
-                        <select class="taxes-form__input" name="id_operateur" data-prefix-operateur required>
-                            <option value="">Opérateur</option>
-                            <?php foreach ($operateurs as $o) : ?>
-                                <option value="<?= esc($o['id']) ?>" data-proprietaire="<?= esc(strtolower($o['proprietaire_nom'])) ?>">
-                                    <?= esc($o['nom']) ?>
-                                </option>
-                            <?php endforeach; ?>
-                        </select>
-                        <span class="pill-badge" data-prefix-badge hidden></span>
-                        <button type="submit">OK</button>
-                    </form>
+            <form class="taxes-form prefix-form" action="<?= base_url('admin/prefixe') ?>" method="post" data-prefix-form novalidate>
+                <div class="taxes-form__field">
+                    <label class="admin-label" for="prefix-input">Préfixe</label>
+                    <input
+                        class="taxes-form__input prefix-form__input"
+                        id="prefix-input"
+                        type="text"
+                        inputmode="numeric"
+                        maxlength="3"
+                        placeholder="038"
+                        name="prefixe"
+                        data-prefix-input
+                        required
+                    >
                 </div>
 
-                <div>
-                    <span class="admin-label">Vos prefixes en vigueur</span>
-                    <div class="pill-list" data-prefix-list>
+                <div class="taxes-form__field">
+                    <label class="admin-label" for="prefix-operateur">Opérateur</label>
+                    <select class="taxes-form__input prefix-form__select" id="prefix-operateur" name="id_operateur" data-prefix-operateur required>
+                        <option value="">Choisir...</option>
+                        <?php foreach ($operateurs as $o) : ?>
+                            <option value="<?= esc($o['id']) ?>" data-proprietaire="<?= esc(strtolower($o['proprietaire_nom'])) ?>">
+                                <?= esc($o['nom']) ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+
+                <div class="taxes-form__field prefix-form__preview-field">
+                    <span class="admin-label">Type</span>
+                    <span class="pill-badge prefix-form__preview" data-prefix-badge hidden></span>
+                </div>
+
+                <button type="submit" class="admin-btn admin-btn--green taxes-form__submit">Ajouter</button>
+            </form>
+
+            <div class="admin-section__block">
+                <span class="admin-label">Vos préfixes en vigueur</span>
+                <div class="pill-list" data-prefix-list>
                         <?php foreach ($prefixes as $p) : ?>
                             <div class="pill <?= $p['actif'] ? '' : 'is-off' ?>">
                                 <span class="pill__value">
@@ -95,7 +105,6 @@
                         <?php if (empty($prefixes)) : ?>
                             <p class="admin-empty">Aucun préfixe configuré pour le moment.</p>
                         <?php endif; ?>
-                    </div>
                 </div>
             </div>
         </section>

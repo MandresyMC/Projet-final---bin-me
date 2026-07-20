@@ -37,3 +37,5 @@ $routes->post('/admin/commission', 'Admin\BaremeFraisController::createCommissio
 $routes->post('/admin/commission/(:num)/delete', 'Admin\BaremeFraisController::deleteCommission/$1');
 
 $routes->get('/admin/clients', 'Admin\SituationClientController::index');
+
+$routes->get('/admin/historique', 'Admin\HistoriqueController::index');

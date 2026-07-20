@@ -62,15 +62,38 @@ class AdminDashboardController extends BaseController
              ORDER BY total_gain DESC"
         )->getResultArray();
 
+        // Montant de commission pris par chaque operateur non proprietaire (transferts externes)
+        $commissionParOperateur = $db->query(
+            "SELECT op.nom as operateur_nom,
+                    ROUND(SUM(o.montant * o.pourcentage_commission / 100), 2) as montant_commission
+             FROM operation o
+             JOIN operateur op ON o.id_operateur = op.id
+             WHERE o.pourcentage_commission > 0
+             GROUP BY op.id, op.nom
+             ORDER BY montant_commission DESC"
+        )->getResultArray();
+
+        // Repartition du montant transfere vers chaque operateur externe
+        $repartitionParOperateur = $db->query(
+            "SELECT op.nom as operateur_nom, SUM(o.montant) as volume, COUNT(o.id) as nombre
+             FROM operation o
+             JOIN operateur op ON o.id_operateur = op.id
+             WHERE o.id_operateur IS NOT NULL
+             GROUP BY op.id, op.nom
+             ORDER BY volume DESC"
+        )->getResultArray();
+
         return view('admin/dashboard', [
-            'nombreUtilisateurs' => $nombreUtilisateurs,
-            'volumeTotal'        => $totauxOperations['volume'],
-            'nombreOperations'   => $totauxOperations['nombre'],
-            'gainsTotal'         => $totauxOperations['gains'],
-            'tauxEchec'          => $tauxEchec,
-            'evolution'          => $evolution,
-            'repartition'        => $repartition,
-            'gains'              => $gainsParType,
+            'nombreUtilisateurs'      => $nombreUtilisateurs,
+            'volumeTotal'             => $totauxOperations['volume'],
+            'nombreOperations'        => $totauxOperations['nombre'],
+            'gainsTotal'              => $totauxOperations['gains'],
+            'tauxEchec'               => $tauxEchec,
+            'evolution'               => $evolution,
+            'repartition'             => $repartition,
+            'gains'                   => $gainsParType,
+            'commissionParOperateur'  => $commissionParOperateur,
+            'repartitionParOperateur' => $repartitionParOperateur,
         ]);
     }
 }
