@@ -48,3 +48,15 @@ $routes->get('/client/transfert', static function () {
 $routes->get('/client/historique', static function () {
     return view('client/historique');
 });
+
+$routes->get('/admin/dashboard', static function () {
+    return view('admin/dashboard');
+});
+
+$routes->get('/admin/configuration', static function () {
+    return view('admin/configuration');
+});
+
+$routes->get('/admin/clients', static function () {
+    return view('admin/clients');
+});

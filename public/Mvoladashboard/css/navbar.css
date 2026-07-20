@@ -94,6 +94,11 @@
   color: #ffffff;
 }
 
+.nav-btn--active {
+  background-color: var(--mvola-green);
+  color: #ffffff;
+}
+
 .mvola-navbar__toggle {
   display: none;
   flex-direction: column;
