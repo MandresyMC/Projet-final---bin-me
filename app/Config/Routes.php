@@ -7,7 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 $routes->get('/', 'HomeController::index');
-$routes->get('/login', 'LoginController::verify');
+$routes->post('/login', 'LoginController::verify');
 
 $routes->group('admin', function($adminRoutes) {
     $adminRoutes->get('/', 'AdminController::index');

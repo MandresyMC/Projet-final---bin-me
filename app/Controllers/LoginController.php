@@ -17,10 +17,25 @@ class LoginController extends BaseController
     {
         $numero = trim($this->request->getPost('numero_telephone'));
 
-        if (!preg_match('/^(32|33|34|37|38)\d{7}$/', $numero)) {
+        // Vérifie que le numéro ne contient que des chiffres
+        if (!ctype_digit($numero)) {
             return redirect()->back()
                 ->withInput()
-                ->with('error', 'Numéro de téléphone invalide.');
+                ->with('error', 'Le numéro de téléphone ne doit contenir que des chiffres.');
+        }
+
+        // Vérifie la longueur
+        if (strlen($numero) !== 9) {
+            return redirect()->back()
+                ->withInput()
+                ->with('error', 'Le numéro de téléphone doit contenir exactement 9 chiffres.');
+        }
+
+        // Vérifie le préfixe
+        if (!preg_match('/^(32|33|34|37|38)/', $numero)) {
+            return redirect()->back()
+                ->withInput()
+                ->with('error', 'Le numéro doit commencer par 32, 33, 34, 37 ou 38.');
         }
 
         try {
