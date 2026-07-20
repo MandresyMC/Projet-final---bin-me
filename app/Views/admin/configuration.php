@@ -24,7 +24,6 @@
 
         <nav class="admin-quicknav" aria-label="Navigation rapide">
             <a class="admin-quicknav__link" data-quicknav-link href="#prefixes">Prefixes</a>
-            <a class="admin-quicknav__link" data-quicknav-link href="#operations">Operations</a>
             <a class="admin-quicknav__link" data-quicknav-link href="#taxes">Taxes et frais</a>
             <a class="admin-quicknav__link" data-quicknav-link href="#commissions">Commissions</a>
         </nav>
@@ -106,24 +105,6 @@
                             <p class="admin-empty">Aucun préfixe configuré pour le moment.</p>
                         <?php endif; ?>
                 </div>
-            </div>
-        </section>
-
-        <!-- ===== OPERATIONS (simulation front, pas de table en base) ===== -->
-        <section class="admin-section" id="operations" data-quicknav-target>
-            <h1 class="admin-section__title">OPERATIONS</h1>
-            <p class="admin-section__desc">
-                Activez ou désactivez les types d'opérations disponibles pour vos clients.
-            </p>
-
-            <span class="admin-label">Vos operations en vigueur</span>
-            <div class="pill-list">
-                <?php foreach ($types as $t) : ?>
-                    <div class="pill">
-                        <span class="pill__value"><?= esc(strtoupper($t['nom'])) ?></span>
-                        <button type="button" class="pill__toggle" data-state="on">DESACTIVER</button>
-                    </div>
-                <?php endforeach; ?>
             </div>
         </section>
 

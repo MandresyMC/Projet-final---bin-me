@@ -209,7 +209,7 @@ class OperationController extends BaseController
 
         if ($idUserSource !== null) {
             $this->userModel->update($idUserSource, [
-                'solde' => $user['solde'] - $montant - ($frais * $nbDestinations),
+                'solde' => $user['solde'] - $montant - $frais,
             ]);
         }
 
