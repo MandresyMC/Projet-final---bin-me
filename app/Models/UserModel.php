@@ -6,38 +6,26 @@ use CodeIgniter\Model;
 
 class UserModel extends Model
 {
-    protected $table = 'users';
+    protected $table = 'user';
     protected $primaryKey = 'id';
 
     // Champs autorisés pour insert/update
     protected $allowedFields = [
-        'nom',
-        'email',
-        'password'
+        'numero_telephone',
+        'solde'
     ];
 
-    // (Optionnel mais conseillé)
     protected $useTimestamps = false;
-    protected $createdField  = 'created_at';
 
     protected $validationRules = [
-        'nom' => 'required|min_length[3]|max_length[255]',
-        'email' => 'required',
-        'password' => 'required|min_length[8]'
+        'numero_telephone' => 'required|min_length[10]|max_length[15]',
     ];
 
     protected $validationMessages = [
-        'nom' => [
-            'required' => 'Le prénom et nom sont obligatoire.',
-            'min_length' => 'Votre nom doit contenir au moins 3 caractères.',
-            'max_length' => 'Votre nom ne doit pas dépasser 255 caractères.'
-        ],
-        'email' => [
-            'required' => 'L\'email est obligatoire.'
-        ],
-        'password' => [
-            'required' => 'Le mot de passe est obligatoire.',
-            'min_length' => 'Le mot de passe doit contenir au moins 8 caractères.'
+        'numero_telephone' => [
+            'required' => 'Le numéro de téléphone est obligatoire.',
+            'min_length' => 'Le numéro de téléphone doit contenir au moins 10 caractères.',
+            'max_length' => 'Le numéro de téléphone ne doit pas dépasser 15 caractères.'
         ]
     ];
 
