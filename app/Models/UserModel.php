@@ -9,7 +9,6 @@ class UserModel extends Model
     protected $table = 'user';
     protected $primaryKey = 'id';
 
-    // Champs autorisés pour insert/update
     protected $allowedFields = [
         'numero_telephone',
         'solde'
@@ -18,14 +17,13 @@ class UserModel extends Model
     protected $useTimestamps = false;
 
     protected $validationRules = [
-        'numero_telephone' => 'required|min_length[10]|max_length[15]',
+        'numero_telephone' => 'required|exact_length[9]',
     ];
 
     protected $validationMessages = [
         'numero_telephone' => [
             'required' => 'Le numéro de téléphone est obligatoire.',
-            'min_length' => 'Le numéro de téléphone doit contenir au moins 10 caractères.',
-            'max_length' => 'Le numéro de téléphone ne doit pas dépasser 15 caractères.'
+            'exact_length' => 'Le numéro de téléphone doit contenir exactement 9 chiffres.'
         ]
     ];
 

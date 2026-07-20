@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\OperationModel;
 
-class DashboardController extends BaseController
+class AdminDashboardController extends BaseController
 {
     protected $operationModel;
 

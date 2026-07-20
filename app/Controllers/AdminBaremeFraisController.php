@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\TypeModel;
 
-class BaremeFraisController extends BaseController
+class AdminBaremeFraisController extends BaseController
 {
     protected $typeModel;
 

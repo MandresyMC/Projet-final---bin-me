@@ -16,7 +16,8 @@ $routes->get('/client/accueil', static function () {
     ]);
 });
 
-$routes->get('/client/operation', 'OperationController::index');
+$routes->get('/client/operation', 'ClientOperationController::index');
+$routes->post('/client/operation', 'ClientOperationController::createOperation');
 
 $routes->get('/client/depot', static function () {
     return view('client/transaction_form', [
@@ -48,3 +49,5 @@ $routes->get('/client/transfert', static function () {
 $routes->get('/client/historique', static function () {
     return view('client/historique');
 });
+
+$routes->get('/deconnexion', 'LoginController::deconnexion');

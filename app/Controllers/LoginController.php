@@ -63,7 +63,7 @@ class LoginController extends BaseController
             'logged_in'         => true
         ]);
 
-        return redirect()->to('/client/operation');
+        return redirect()->to('/client/accueil');
     }
 
     public function deconnexion()

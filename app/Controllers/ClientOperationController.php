@@ -7,7 +7,7 @@ use App\Models\BaremeFraisModel;
 use App\Models\TypeModel;
 use App\Models\UserModel;
 
-class OperationController extends BaseController
+class ClientOperationController extends BaseController
 {
     protected $operationModel;
     protected $baremeFraisModel;
@@ -30,10 +30,16 @@ class OperationController extends BaseController
     public function createOperation() {
         $this->verificationConnexion();
         
-        $typeOperation = $this->request->getPost('type_operation');
+        $typeOperation = trim((string) $this->request->getPost('type_operation'));
         $numeroUserSource = $this->request->getPost('numero_user_source');
         $numeroUserDestination = $this->request->getPost('numero_user_destination');
         $montant = $this->request->getPost('montant');
+
+        if ($typeOperation === '') {
+            return redirect()->back()
+                ->withInput()
+                ->with('error', 'Veuillez sélectionner un type d\'opération.');
+        }
 
         if ($montant <= 0) {
             return redirect()->back()
@@ -42,7 +48,15 @@ class OperationController extends BaseController
         }
 
         try {
-            $id_type = $this->typeModel->where('nom', $typeOperation)->first()['id'];
+            $typeRow = $this->typeModel->where('nom', strtoupper($typeOperation))->first();
+
+            if (!$typeRow) {
+                return redirect()->back()
+                    ->withInput()
+                    ->with('error', 'Type d\'opération invalide.');
+            }
+
+            $id_type = $typeRow['id'];
 
             $numeroUserSource = trim($numeroUserSource);
             $numeroUserSource = str_replace(' ', '', $numeroUserSource);
@@ -80,7 +94,15 @@ class OperationController extends BaseController
             $frais = 0.00;
             if ($typeOperation != 'depot') {
                 $sql = "SELECT frais FROM bareme_frais WHERE ? BETWEEN montant_min AND montant_max";
-                $frais = $this->operationModel->db->query($sql, [$montant])->getRowArray()['frais'];
+                $rowFrais = $this->operationModel->db->query($sql, [$montant])->getRowArray();
+
+                if (!$rowFrais) {
+                    return redirect()->back()
+                        ->withInput()
+                        ->with('error', 'Aucun barème de frais ne correspond à ce montant.');
+                }
+
+                $frais = $rowFrais['frais'];
             }
 
             $this->operationModel->insert([
@@ -91,6 +113,10 @@ class OperationController extends BaseController
                 'frais' => $frais,
                 'date_creation' => date('Y-m-d H:i:s'),
             ]);
+
+            return redirect()->back()
+                ->withInput()
+                ->with('success', 'L\'opération a été créée avec succès.');
         } catch (\Exception $e) {
             return redirect()->back()
                 ->withInput()
