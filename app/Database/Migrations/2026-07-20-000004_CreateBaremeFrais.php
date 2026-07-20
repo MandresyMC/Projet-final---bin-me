@@ -14,6 +14,12 @@ class CreateBaremeFraisTable extends Migration
                 'constraint'     => 11,
                 'unsigned'       => true,
                 'auto_increment' => true,
+            ],'id_type' => [
+                'type'       => 'INT',
+                'constraint' => 11,
+                'unsigned'   => true,
+                'null'       => false,
+                'default'    => 3,
             ],
             'montant_min' => [
                 'type'       => 'DECIMAL',

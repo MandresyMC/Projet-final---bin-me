@@ -19,6 +19,7 @@ CREATE TABLE `operation` (
     `id_user_destination` INT,
     `montant` DECIMAL(10,2) NOT NULL,
     `frais` DECIMAL(10,2) DEFAULT 0.00,
+    `statut` ENUM('VALIDE', 'ECHEC') NOT NULL DEFAULT 'VALIDE',
     `date_creation` DATETIME NOT NULL,
     PRIMARY KEY (`id`),
     CONSTRAINT `fk_operation_type` 

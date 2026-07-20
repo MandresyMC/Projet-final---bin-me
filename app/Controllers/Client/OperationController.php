@@ -28,10 +28,18 @@ class OperationController extends BaseController
     }
 
     public function createOperation() {
+        $this->verificationConnexion();
+        
         $typeOperation = $this->request->getPost('type_operation');
         $numeroUserSource = $this->request->getPost('numero_user_source');
         $numeroUserDestination = $this->request->getPost('numero_user_destination');
         $montant = $this->request->getPost('montant');
+
+        if ($montant <= 0) {
+            return redirect()->back()
+                ->withInput()
+                ->with('error', 'Le montant doit être supérieur à zéro.');
+        }
 
         try {
             $id_type = $this->typeModel->where('nom', $typeOperation)->first()['id'];
@@ -88,5 +96,21 @@ class OperationController extends BaseController
                 ->withInput()
                 ->with('error', 'Une erreur est survenue lors de la création de l\'opération.');
         }
+    }
+
+    public function historiques() {
+        $this->verificationConnexion();
+        
+        $userId = session()->get('user_id');
+
+        $operations = $this->operationModel
+            ->select('operation.*, type.nom as type_nom')
+            ->join('type', 'operation.id_type = type.id')
+            ->where('id_user_source', $userId)
+            ->orWhere('id_user_destination', $userId)
+            ->orderBy('date_creation', 'DESC')
+            ->findAll();
+
+        return view('client/historiques', ['operations' => $operations]);
     }
 }
