@@ -94,7 +94,8 @@ class OperationController extends BaseController
 
         $typeOperation = strtolower(trim((string) $this->request->getPost('type_operation')));
         $montant = (float) $this->request->getPost('montant');
-        $numerosDestination = $this->request->getPost('numero_user_destination');
+        $numerosDestination = $this->request->getPost('numero_user_destination') ?? [];
+        $nbDestinations = count($numerosDestination);
         $numerosDestination = array_map(function ($numero) {
             return str_replace(' ', '', trim($numero));
         }, $numerosDestination);
@@ -161,7 +162,7 @@ class OperationController extends BaseController
 
                 if ($destinataire) {
                     // Compte MVola existant (necessairement un numero de l'operateur proprietaire)
-                    $idUserDestination = $destinataire['id'];
+                    $idUserDestination[] = $destinataire['id'];
                 } else {
                     // Transfert externe : numero valide mais sans compte MVola (autre operateur, ou Yas sans compte)
                     $idOperateurDestination = (int) $prefixeInfo['id_operateur'];
@@ -189,23 +190,25 @@ class OperationController extends BaseController
             ]);
         }
 
-        if ($idUserDestination !== null) {
-            $destinataireActuel = $this->userModel->find($idUserDestination);
-            $this->userModel->update($idUserDestination, [
-                'solde' => $destinataireActuel['solde'] + $montant,
+        foreach ($idUserDestination as $id) {
+            $destinataireActuel = $this->userModel->find($id);
+            $montantParDestinataire = $montant / $nbDestinations;
+            $this->userModel->update($id, [
+                'solde' => $destinataireActuel['solde'] + $montantParDestinataire,
+            ]);
+        
+
+            $this->operationModel->insert([
+                'id_type'                => $type['id'],
+                'id_user_source'         => $idUserSource,
+                'id_user_destination'    => $idUserDestination,
+                'id_operateur'           => $idOperateurDestination,
+                'montant'                => $montantParDestinataire,
+                'frais'                  => $frais/$nbDestinations,
+                'pourcentage_commission' => $pourcentageCommission,
+                'date_creation'          => date('Y-m-d H:i:s'),
             ]);
         }
-
-        $this->operationModel->insert([
-            'id_type'                => $type['id'],
-            'id_user_source'         => $idUserSource,
-            'id_user_destination'    => $idUserDestination,
-            'id_operateur'           => $idOperateurDestination,
-            'montant'                => $montant,
-            'frais'                  => $frais,
-            'pourcentage_commission' => $pourcentageCommission,
-            'date_creation'          => date('Y-m-d H:i:s'),
-        ]);
 
         $db->transComplete();
 
