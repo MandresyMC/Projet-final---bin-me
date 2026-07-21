@@ -108,6 +108,24 @@
             </div>
         </section>
 
+        <!-- ===== OPERATIONS (simulation front, pas de table en base) ===== -->
+        <section class="admin-section" id="operations" data-quicknav-target>
+            <h1 class="admin-section__title">OPERATIONS</h1>
+            <p class="admin-section__desc">
+                Activez ou désactivez les types d'opérations disponibles pour vos clients.
+            </p>
+
+            <span class="admin-label">Vos operations en vigueur</span>
+            <div class="pill-list">
+                <?php foreach ($types as $t) : ?>
+                    <div class="pill">
+                        <span class="pill__value"><?= esc(strtoupper($t['nom'])) ?></span>
+                        <button type="button" class="pill__toggle" data-state="on">DESACTIVER</button>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </section>
+
         <!-- ===== TAXES ET FRAIS (relie a la table bareme_frais) ===== -->
         <section class="admin-section" id="taxes" data-quicknav-target>
             <h1 class="admin-section__title">TAXES ET FRAIS</h1>
