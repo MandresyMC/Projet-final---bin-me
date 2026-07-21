@@ -155,7 +155,7 @@ a {
 .hero-btn--ghost {
   background-color: var(--mvola-cream);
   color: var(--mvola-yellow);
-  border-color: var(--mvola-yellow);
+  border-color: #000000;
 }
 
 .hero-btn--ghost.is-revealed {
